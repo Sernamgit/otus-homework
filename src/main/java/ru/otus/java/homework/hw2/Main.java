@@ -45,17 +45,17 @@ public class Main {
      }
 
      public static void greaterHalf(int[] input){
-        int sumRight = 0;
         int sumLeft = 0;
+        int sumRight = 0;
         for (int i = 0; i < input.length / 2; i++){
-            sumRight += input[i];
-        }
-        for (int i = input.length / 2; i < input.length; i++){
             sumLeft += input[i];
         }
-        if (sumRight > sumLeft){
+        for (int i = input.length / 2; i < input.length; i++){
+            sumRight += input[i];
+        }
+        if (sumLeft > sumRight){
             System.out.println("Первая половина больше");
-        } else if (sumRight < sumLeft){
+        } else if (sumLeft < sumRight){
             System.out.println("Вторая половина больше");
         } else System.out.println("Суммы равны");
      }
