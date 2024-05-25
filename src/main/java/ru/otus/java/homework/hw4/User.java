@@ -1,10 +1,10 @@
 package ru.otus.java.homework.hw4;
 
 public class User {
-    String lastName;
-    String name;
-    String patronymic;
-    int yearOfBirth;
+    private String lastName;
+    private String name;
+    private String patronymic;
+    private int yearOfBirth;
 
     String email;
 

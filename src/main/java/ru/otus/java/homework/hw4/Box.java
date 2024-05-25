@@ -4,9 +4,8 @@ public class Box {
     private final int length;
     private final int width;
     private final int height;
-    String colour;
+    private String colour;
     private boolean isOpen = false;
-    private boolean isfull = false;
     private String content;
 
     public Box(int length, int width, int height, String colour){
@@ -47,7 +46,7 @@ public class Box {
         } else {
             System.out.println("коробка закрыта");
         }
-        if (isfull){
+        if (content != null){
             System.out.println("В коробке лежит " + content);
         } else {
             System.out.println("В коробке пусто");
@@ -56,11 +55,10 @@ public class Box {
 
 
     public void putItem(String item){
-        if (!isfull && isOpen){
+        if (content == null && isOpen){
             System.out.println("Вы положили в коробку " + item);
-            isfull = true;
             content = item;
-        } else if (isfull){
+        } else if (content != null){
             System.out.println("коробка полная");
         } else if (!isOpen){
             System.out.println("коробка закрыта");
@@ -69,10 +67,10 @@ public class Box {
     }
 
     public void removeItem(){
-        if (isfull && isOpen){
+        if (content != null && isOpen){
             System.out.println("Вы убрали из коробки " + content);
-            isfull = false;
-        } else if (!isfull){
+            content = null;
+        } else if (content == null){
             System.out.println("коробка пуста");
         } else if (!isOpen) {
             System.out.println("коробка закрыта");
