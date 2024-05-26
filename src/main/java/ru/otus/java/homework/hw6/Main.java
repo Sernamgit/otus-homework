@@ -2,7 +2,7 @@ package ru.otus.java.homework.hw6;
 
 public class Main {
     public static void main(String[] args) {
-        Plate tarelka = new Plate(10);
+        Plate tarelka = new Plate(20);
 
         Cat[] catArray =  new Cat[5];
 
@@ -11,9 +11,7 @@ public class Main {
         }
 
         for (int i = 0; i < catArray.length ; i++) {
-            if(!tarelka.isEmpty(catArray[i].getAppetite())){
-                catArray[i].setFed(true);
-            }
+            catArray[i].eat(tarelka);
         }
 
         for (int i = 0; i < catArray.length; i++) {

@@ -17,15 +17,13 @@ public class Cat {
         return name;
     }
 
-    public int getAppetite() {
-        return appetite;
-    }
-
     public boolean isFed() {
         return isFed;
     }
 
-    public void setFed(boolean fed) {
-        isFed = fed;
+    public void eat(Plate tarelka){
+        if(!tarelka.reduceFood(appetite)){
+            isFed = true;
+        }
     }
 }

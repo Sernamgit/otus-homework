@@ -17,7 +17,7 @@ public class Plate {
         //System.out.println("добавили еду в тарелку");
     }
 
-    public boolean isEmpty(int amount){
+    public boolean reduceFood(int amount){
         currentVolume -= amount;
         if (currentVolume <= 0){
             //System.out.println("тарелка пустая");
