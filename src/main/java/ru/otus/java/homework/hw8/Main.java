@@ -13,7 +13,6 @@ public class Main {
 
         }
 
-
         try{
             System.out.println(matrixSum(testArr));
         } catch (AppArrayDataException | AppArraySizeException e){
