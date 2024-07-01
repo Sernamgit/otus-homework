@@ -6,21 +6,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-//        List<Integer> testList;
-//        testList = fill(4,7);
-//        System.out.println(testList);
-//
-//        System.out.println(sumGraterThanFive(testList));
-//
-//        fillWithNumber(1, testList);
-//        System.out.println(testList);
-//
-//        increaseBy(5, testList);
-//        System.out.println(testList);
 
         List<Employee> testList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            testList.add(new Employee("Ivan" + i, i + 2000));
+            testList.add(new Employee("Ivan" + i, i + 20));
         }
 
         for (Employee employee : testList) {

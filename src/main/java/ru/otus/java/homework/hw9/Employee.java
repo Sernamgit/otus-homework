@@ -1,7 +1,6 @@
 package ru.otus.java.homework.hw9;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Employee {
@@ -16,7 +15,7 @@ public class Employee {
     public static List<Employee> olderThan(List<Employee> list, int age) {
         List<Employee> result = new ArrayList<>();
         for (Employee employee : list) {
-            if (new GregorianCalendar().getWeekYear() - employee.getAge() >= age) {
+            if (employee.getAge() >= age) {
                 result.add(employee);
             }
         }
@@ -26,21 +25,19 @@ public class Employee {
     public static boolean minAverage(List<Employee> list, int averageAge) {
         int ageAll = 0;
         for (Employee employee : list) {
-            ageAll += new GregorianCalendar().getWeekYear() - employee.getAge();
+            ageAll += employee.getAge();
         }
         return ageAll / list.size() > averageAge;
     }
 
     public static Employee getMinAgeEmployee(List<Employee> list) {
-        int minAge = list.get(0).getAge();
-        int position = 0;
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getAge() < minAge) {
-                minAge = list.get(i).getAge();
-                position = i;
+        Employee result = list.get(0);
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i).getAge() < result.getAge()) {
+                result = list.get(i);
             }
         }
-        return list.get(position);
+        return result;
     }
 
 
