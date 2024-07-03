@@ -7,19 +7,19 @@ import java.util.Set;
 
 public class PhoneBook {
 
-    private Map<Integer, String> phoneBook;
+    private Map<Integer, String> pb;
 
     public PhoneBook() {
-        phoneBook = new HashMap<>();
+        pb = new HashMap<>();
     }
 
     public void add(String name, int number) {
-        phoneBook.put(number, name);
+        pb.put(number, name);
     }
 
     public Set find(String name) {
         Set<Integer> result = new HashSet<>();
-        for (Map.Entry<Integer, String> entry : phoneBook.entrySet()) {
+        for (Map.Entry<Integer, String> entry : pb.entrySet()) {
             if (entry.getValue().equals(name)) {
                 result.add(entry.getKey());
             }
@@ -28,6 +28,6 @@ public class PhoneBook {
     }
 
     public boolean containsPhoneNumber(int number) {
-        return phoneBook.containsKey(number);
+        return pb.containsKey(number);
     }
 }
