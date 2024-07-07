@@ -1,5 +1,7 @@
 package ru.otus.java.homework.hw13.client;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
@@ -21,6 +23,7 @@ public class Main {
                 }
 
                 client.sendData(userInput);
+                System.out.println(client.readData());
             }
 
 
