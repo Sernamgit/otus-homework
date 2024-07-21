@@ -12,13 +12,15 @@ public class Main {
         arrayMultiFill(100_000_000, 4);
         System.out.println(System.currentTimeMillis() - time2);
     }
-    public static void  arrayFill(int size){
+
+    public static void arrayFill(int size) {
         double[] array = new double[size];
         for (int i = 0; i < array.length; i++) {
             array[i] = 1.14 * Math.cos(i) * Math.sin(i * 0.2) * Math.cos(i / 1.2);
         }
     }
-    public static void arrayMultiFill(int size, int parts) throws InterruptedException   {
+
+    public static void arrayMultiFill(int size, int parts) throws InterruptedException {
         double[] array = new double[size];
         int partSize = (array.length + parts - 1) / parts;
         Thread[] threads = new Thread[parts];
@@ -39,12 +41,8 @@ public class Main {
             threads[i].start();
         }
 
-//        for (Thread thread : threads) {
-//            thread.join();
-//        }
-
-
+        for (Thread thread : threads) {
+            thread.join();
+        }
     }
-
-
 }
